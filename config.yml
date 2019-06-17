@@ -1,0 +1,17 @@
+logging:
+  level: INFO
+  loggers:
+    com.fyle: DEBUG
+
+database:
+  # the name of your JDBC driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  user: ymtiyyyceshcae
+
+  # the password
+  password: 21084a0e3d7dad5dfe367f1b1a86efb07d71e90829274db0973ab893578f34df
+
+  # the JDBC URL
+  url: jdbc:postgresql://ec2-107-22-238-217.compute-1.amazonaws.com:5432/d5uh2poviljvqo
