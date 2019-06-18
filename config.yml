@@ -15,3 +15,6 @@ database:
 
   # the JDBC URL
   url: jdbc:postgresql://ec2-107-22-238-217.compute-1.amazonaws.com:5432/d5uh2poviljvqo
+
+swagger:
+  resourcePackage: com.fyle.resources
