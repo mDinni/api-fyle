@@ -127,6 +127,9 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration> 
                 <version>3.0.0-M1</version>
                 <executions>
                     <execution>

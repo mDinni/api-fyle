@@ -2,6 +2,9 @@ package com.fyle.resources;
 
 import com.fyle.dao.BranchesDao;
 import com.fyle.data.Branches;
+import com.fyle.data.ComplexPrincipal;
+
+import io.dropwizard.auth.Auth;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -30,7 +33,7 @@ public class BranchesResource {
             response = Branches.class
     )
 
-    public List<Branches> get(@QueryParam("bank_name") String bankName, @QueryParam("city") String city, @QueryParam("limit") int limit, @QueryParam("offset") int offset) {
+    public List<Branches> get(@Auth ComplexPrincipal user, @QueryParam("bank_name") String bankName, @QueryParam("city") String city, @QueryParam("limit") int limit, @QueryParam("offset") int offset) {
         if (offset < 0) offset = 0;
         if (limit == 0) limit = 2;
 

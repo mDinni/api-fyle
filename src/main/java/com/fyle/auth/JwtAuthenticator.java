@@ -1,14 +1,13 @@
 package com.fyle.auth;
 
-import com.fyle.data.SimplePrincipal;
+import com.fyle.data.ComplexPrincipal;
 import io.dropwizard.auth.AuthenticationException;
 import io.dropwizard.auth.Authenticator;
-import org.jose4j.jwt.MalformedClaimException;
 import org.jose4j.jwt.consumer.JwtContext;
 
 import java.util.Optional;
 
-public class JwtAuthenticator implements Authenticator<JwtContext, SimplePrincipal> {
+public class JwtAuthenticator implements Authenticator<JwtContext, ComplexPrincipal> {
 
     private final String jwtSecretSubject;
 
@@ -17,12 +16,14 @@ public class JwtAuthenticator implements Authenticator<JwtContext, SimplePrincip
     }
 
     @Override
-    public Optional<SimplePrincipal> authenticate(JwtContext jwtContext) throws AuthenticationException {
+    public Optional<ComplexPrincipal> authenticate(JwtContext jwtContext) throws AuthenticationException {
 
         try {
             final String subject = jwtContext.getJwtClaims().getSubject();
             if (jwtSecretSubject.equals(subject))
-                return Optional.of(new SimplePrincipal("ADMIN"));
+            {
+                return Optional.of(new ComplexPrincipal("ADMIN"));
+            }
         } catch (Exception e) {
             System.out.println("Error Occured: " + e.getMessage());
         }

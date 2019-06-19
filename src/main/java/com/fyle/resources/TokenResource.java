@@ -33,7 +33,7 @@ public class TokenResource {
     @Path("/getToken")
     public Map<String, String> getToken(@Auth SimplePrincipal principal) {
         final JwtClaims claims = new JwtClaims();
-        claims.setSubject("good-guy");
+        claims.setSubject("no-subject");
         claims.setExpirationTimeMinutesInTheFuture(30);
 
         final JsonWebSignature jws = new JsonWebSignature();
