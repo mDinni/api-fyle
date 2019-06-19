@@ -24,7 +24,7 @@ public class JwtAuthenticator implements Authenticator<JwtContext, SimplePrincip
             if (jwtSecretSubject.equals(subject))
                 return Optional.of(new SimplePrincipal("ADMIN"));
         } catch (Exception e) {
-            throws AuthenticationException ;
+            System.out.println("Error Occured: " + e.getMessage());
         }
 
         return Optional.empty();
