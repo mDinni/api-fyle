@@ -18,3 +18,11 @@ database:
 
 swagger:
   resourcePackage: com.fyle.resources
+
+jwtToken: "47897dfsdasdjwnrbzja342348sdfa123"
+
+jwtSubject: "no-subject"
+
+apiUser: "user"
+
+apiPassoword: "011235"

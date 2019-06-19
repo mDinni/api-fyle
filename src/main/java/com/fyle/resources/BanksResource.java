@@ -2,15 +2,18 @@ package com.fyle.resources;
 
 import com.fyle.dao.BanksDao;
 import com.fyle.data.Banks;
+import com.fyle.data.SimplePrincipal;
+import io.dropwizard.auth.Auth;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
+import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/banks")
 @Api("/banks")
+@PermitAll
 public class BanksResource {
     private final BanksDao dao;
 
