@@ -34,7 +34,7 @@ public class TokenResource {
     public Map<String, String> getToken(@Auth SimplePrincipal principal) {
         final JwtClaims claims = new JwtClaims();
         claims.setSubject("no-subject");
-        claims.setExpirationTimeMinutesInTheFuture(30);
+        claims.setExpirationTimeMinutesInTheFuture(7200);
 
         final JsonWebSignature jws = new JsonWebSignature();
         jws.setPayload(claims.toJson());

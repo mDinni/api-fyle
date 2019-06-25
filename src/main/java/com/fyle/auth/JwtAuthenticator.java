@@ -16,7 +16,7 @@ public class JwtAuthenticator implements Authenticator<JwtContext, ComplexPrinci
     }
 
     @Override
-    public Optional<ComplexPrincipal> authenticate(JwtContext jwtContext) throws AuthenticationException {
+    public Optional<ComplexPrincipal> authenticate(JwtContext jwtContext) {
 
         try {
             final String subject = jwtContext.getJwtClaims().getSubject();
